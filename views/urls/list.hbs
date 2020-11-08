@@ -1,0 +1,26 @@
+<div class="col-md-6 offset-md-3 w">
+    <h3><a class="btn btn-secondary" href="/shorturl"><i class="fa fa-plus"></i> Create New</a> Url List</h3>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Full Url</th>
+                <th>Short Url</th>
+                <th>Clicks</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        {{#each shortUrls}}
+            <tr>
+                <td><a href="{{this.url}}">{{this.url}}</a></td>
+                <td><a href="{{this.name}}">{{this.name}}</a></td>
+                <td><a>{{this.clicks}}</a></td>
+                <td>
+                    <a href="/shorturl/update/{{this._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+                    <a href="/shorturl/delete/{{this._id}}" onclick="return confirm('Are you sure to delete this event ?');"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+                </td>
+            </tr>
+        {{/each}}
+        </tbody>
+    </table>
+</div>
